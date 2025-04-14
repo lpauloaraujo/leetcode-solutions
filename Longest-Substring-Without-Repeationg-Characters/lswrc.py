@@ -1,15 +1,15 @@
 def longest_substring(string):
     longest_substring = ""
-    actual_substring = ""
+    current_substring = ""
     for index, char in enumerate(string):
         if index == 0:
-            actual_substring += char
+            current_substring += char
         else:
-            if char not in actual_substring:
-                actual_substring += char
+            if char not in current_substring:
+                current_substring += char
             else:
-                longest_substring = max(longest_substring, actual_substring, key=len)
-                actual_substring = char
+                longest_substring = max(longest_substring, current_substring, key=len)
+                current_substring = char
     return longest_substring
 
 def main():
